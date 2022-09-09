@@ -34,7 +34,9 @@ const labelExt = (label) => {
 };
 
 if (!process.argv[2]) {
-  throw new Error('Please add a sentence or word or file  to be analyze');
+  throw new Error(
+    'Please add a sentence or word as arguments. You can also add a text file to the project directory and add its path as the argument. There is already one in it call myText.txt.',
+  );
 }
 
 if (process.argv[2].includes('.txt')) {
