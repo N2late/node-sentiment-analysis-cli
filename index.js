@@ -33,6 +33,10 @@ const labelExt = (label) => {
   }
 };
 
+if (!process.argv[2]) {
+  throw new Error('Please add a sentence or word or file  to be analyze');
+}
+
 if (process.argv[2].includes('.txt')) {
   const readMe = fs.readFileSync(process.argv[2], 'utf-8');
   await postData(url, readMe).then((res) => {
